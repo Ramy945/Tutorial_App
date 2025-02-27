@@ -1,0 +1,90 @@
+* {
+  font-family: Helvetica, Arial;
+}
+body {
+  background-color: #fff8e1;
+}
+h1,
+h2,
+h3 {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  text-shadow: 2px 4px 5px gray;
+  color: rgba(14, 12, 12, 0.815);
+}
+h1 {
+  display: inline;
+  position: relative;
+  top: -27px;
+}
+aside {
+  background-color: #ffafaa;
+}
+nav{
+  background-color: rgb(77, 75, 75);
+
+}
+nav a:hover {
+  font-size: larger;
+  color: blueviolet;
+}
+table thead tr,
+tfoot tr {
+  background-color: rgb(208, 168, 241);
+}
+table tbody tr:nth-of-type(odd) {
+  background-color: #62cc24ab;
+}
+nav {
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 3px;
+  margin: 10px;
+  box-shadow: 2px 4px 5px gray;
+}
+nav a {
+  margin-left: 10px;
+  margin-right: 10px;
+  text-decoration: none;
+  color: rgb(233, 233, 233);
+}
+button {
+  background-color: rgb(255, 201, 25);
+  border: 1px solid gray;
+  border-radius: 4px;
+}
+footer {
+  font-weight: bolder;
+  position: fixed;
+  bottom: 0px;
+}
+.imgTutrials {
+  position: relative;
+  left: -40px;
+  float: left;
+  margin-top: 20px;
+}
+.imgTutrial {
+  position: relative;
+  margin-left: 64%;
+}
+
+aside {
+  border: 1px solid gray;
+  border-radius: 8px;
+  padding: 7px;
+  margin: 10px;
+}
+@media screen and (max-width: 768px) {
+  header h1 {
+    font-size: larger;
+  }
+}
+@media screen and (max-width: 480px) {
+  header h1 {
+    display: none;
+  }
+  nav {
+    display: flex;
+    flex-flow: column wrap;
+  }
+}

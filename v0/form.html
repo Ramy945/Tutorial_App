@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/forms.css" />
+    <link rel="stylesheet" href="assets/css/grid.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <img src="assets/img/logo.png" alt="Logo" width="100" />
+      <h1>Tutorial hinzufügen</h1>
+    </header>
+    <nav>
+      <a href="list.html">Liste der Kategorien</a> 
+      <a href="tutorials.html">Tutorials der Kategorien</a> 
+      <a href="tutorial.html">Details zum Tutorial</a> 
+      <a href="form.html">Tutorial hinzufügen</a>
+    </nav>
+    <main>
+      <form
+        action="https://labs.inf.fh-dortmund.de/tutorialService/testCreateTutorial.php"
+        method="post"
+      >
+        <fieldset>
+          <legend>Tutorialinformation</legend>
+          <label class="required"
+            >Titel:
+            <input
+              type="text"
+              id="titel"
+              name="name"
+              placeholder="z. B. Web-Entwicklung"
+              maxlength="20"
+              minlength="4"
+              pattern="[A-Z].*"
+              required
+          /></label>
+          <p>
+            Sprache:
+            <select name="language">
+              <option value="-">-</option>
+              <option value="de">Deutsch</option>
+              <option value="en">Englisch</option>
+              <option value="es">Spanisch</option>
+              <option value="fr">Französisch</option>
+            </select>
+          </p>
+          <label class="required"
+            >Kategorie:
+            <input
+              type="text"
+              name="categories"
+              id="Kategorie"
+              pattern=".+[,]?.*[^,]"
+              placeholder="Kommunikation, Projektmanagement"
+              required
+            /> </label
+          ><br />
+          <label for="Beschreibung">Beschreibung:</label><br />
+          <textarea
+            rows="7"
+            cols="31"
+            name="description"
+            id="Beschreibung"
+            minlength="40"
+            placeholder="Minimale Länge: 40 Zeichen....."
+          ></textarea>
+        </fieldset>
+        <fieldset>
+          <legend>Zeitliche Rahmenbedingungen</legend>
+          <label class="required"
+            >Dauer:
+            <input
+              type="time"
+              name="duration"
+              id="dauer"
+              min="00:20"
+              max="15:59"
+              required
+          /></label>
+          <br />
+          <label class="required"
+            >Veröffentlichung:
+            <input type="date" name="date" id="datum" required /></label
+          ><br />
+        </fieldset>
+        <fieldset>
+          <legend>Inhalt</legend>
+          <label class="required"
+            ><input type="radio" id= "text" name="type" required />Text-Tutorial
+            <input type="radio" id="video" name="type" required />Video-Tutorial </label
+          ><br />
+          Wert
+          <label class="required"
+            >
+            <input
+              type="text"
+              name="content"
+              id="content"
+              placeholder="Url oder YouTube-Embed-Code"
+              required
+          /></label>
+        </fieldset>
+        <button type="submit">Senden</button>
+      </form>
+    </main>
+    <aside>
+      <h2>Neue Tutorials</h2>
+      <ul>
+        <li>
+          Node.js-Der schnelle Einstieg, 28. Sep. 2025-Dauer: 1 Std. 5 Min
+        </li>
+        <li>
+          Angular GrundKurs ,Ökosystem, 28. Sep. 2025-Dauer: 1 Std. 58 Min
+        </li>
+      </ul>
+    </aside>
+    <footer>
+      <p>&copy; By WebTech Inc.</p>
+    </footer>
+    <script src="./assets/js/form.js"></script>
+    <script src="./assets/js/burgerMenu.js"></script>
+  </body>
+</html>

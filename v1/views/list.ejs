@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/flexbox.css" />
+    <link rel="stylesheet" href="/css/tiles.css" />
+
+    <title>List</title>
+  </head>
+  <body>
+    <%- include("includes/header.ejs")%> <%- include("includes/nav.ejs")%>
+    <div class="mainaside">
+      <main>
+        <br />
+        <form
+          action="http://localhost:8020/tutorial?name="
+          method="get"
+        >
+          <label for="Suche">Suchen nach Tutorials:</label>
+          <input
+            type="text"
+            id="Suche"
+            name="name"
+            placeholder="z. B. Web-Entwicklung"
+            maxlength="20"
+            minlength="4"
+            pattern="[A-Z].*"
+            required
+          />
+          <button type="submit">Suchen!</button>
+        </form>
+        <h2>Kategories</h2>
+        <ul class="kachel">
+          <% katego.forEach(function(category) { %>
+          <a
+            href="http://localhost:8020/tutorials?category=<%= category.name %>"
+            ><li class="kate"><img src= <%= category.bild.url %> alt="NodeJS" width="40" /><%= category.name %></li></a
+          >
+          <% }); %>
+        </ul>
+      </main>
+      <%- include("includes/aside.ejs")%>
+    </div>
+
+    <%- include("includes/footer.ejs")%>
+    <script src="/js/script.js"></script>
+    <script src="/js/burgerMenu.js"></script>
+  </body>
+</html>

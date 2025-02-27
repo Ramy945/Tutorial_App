@@ -1,0 +1,34 @@
+.kachel {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+.kate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  width: 315px;
+  height: 200px;
+  border: 1px solid gray;
+  border-radius: 4px;
+  padding: 10px;
+  margin-top: 20px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  box-shadow: 3px 3px 8px gray;
+  background-color: rgba(90, 89, 89, 0.356); /* White color */
+  background-blend-mode: overlay;
+}
+@media screen and (max-width: 768px) {
+  .kachel {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+  }
+  .kate {
+    width: 95%;
+    height: 200px;
+  }
+}

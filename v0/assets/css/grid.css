@@ -1,0 +1,45 @@
+body {
+  display: grid;
+  height: 100vh;
+  grid-template-areas:
+    "head head head"
+    "nav nav nav "
+    "main main side"
+    "foot foot foot";
+  grid-template-rows: 11% 8% auto auto;
+}
+header {
+  grid-area: head;
+  height: fit-content;
+}
+nav {
+  grid-area: nav;
+  height: fit-content;
+}
+main {
+  grid-area: main;
+}
+aside {
+  grid-area: side;
+}
+footer {
+  grid-area: foot;
+}
+@media screen and (max-width: 768px) {
+  body {
+    display: grid;
+    height: 100vh;
+    grid-template-areas:
+      "head head head"
+      "nav nav nav "
+      "main main main"
+      "side side side"
+      "foot foot foot";
+    grid-template-rows: 11% auto auto auto auto;
+  }
+  form{
+    margin-top: 30px;
+  }
+  
+}
+

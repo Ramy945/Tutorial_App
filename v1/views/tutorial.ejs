@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/flexbox.css" />
+    <title>Tutorials</title>
+  </head>
+  <body>
+    <%- include("includes/header.ejs") %> <%- include("includes/nav.ejs") %>
+
+    <div class="mainaside">
+      <main>
+        <section id="node">
+          <% tut.forEach(function(tutorial) { %>
+          <h2><%= tutorial.name %></h2>
+          <div class="info">
+            <p>Datum: <%= tutorial.datum %> , Dauer: <%= tutorial.dauer %></p>
+            <figure class="imgTutorial">
+              <img
+                src="<%= tutorial.bild.url %>"
+                alt="<%= tutorial.name %> Logo"
+                width="100"
+              />
+              <figcaption><%= tutorial.name %> Logo</figcaption>
+            </figure>
+          </div>
+          <% if (tutorial.url) { %>
+          <!-- Text-Tutorial -->
+          <h3>Text-Tutorial</h3>
+          <a href="<%= tutorial.url %>" target="_blank"><%- tutorial.url %></a>
+          <% } else if (tutorial.embedcode) { %>
+          <h3>Video-Tutorial</h3>
+          <div><%- tutorial.embedcode %></div>
+          <table>
+            <thead>
+              <tr>
+                <th>Kapitel</th>
+                <th>Kurzbeschreibung</th>
+                <th>Dauer</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% tutorial.Kapitals.forEach(function(kapital) { %>
+              <tr>
+                <td><%= kapital.name %></td>
+                <td><%= kapital.beschreibung %></td>
+                <td><%= kapital.dauer %></td>
+              </tr>
+              <% }); %>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td></td>
+                <td></td>
+                <th>2 Std. 35 Min.</th>
+              </tr>
+            </tfoot>
+          </table>
+          <% } %> <% }); %>
+        </section>
+      </main>
+
+      <%- include("includes/aside.ejs") %>
+    </div>
+
+    <%- include("includes/footer.ejs") %>
+
+    <script src="/js/burgerMenu.js"></script>
+  </body>
+</html>

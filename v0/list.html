@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/flexbox.css" />
+    <link rel="stylesheet" href="assets/css/tiles.css" />
+    
+    <title>List</title>
+  </head>
+  <body>
+    <header>
+      <img src="assets/img/logo.png" alt="Logo" width="100" />
+      <h1>Liste der Kategorien</h1>
+    </header>
+    <nav>
+      <a href="list.html">Liste der Kategorien</a> 
+      <a href="tutorials.html">Tutorials der Kategorien</a> 
+      <a href="tutorial.html">Details zum Tutorial</a> 
+      <a href="form.html">Tutorial hinzufügen</a>
+    </nav>
+    <div class="mainaside">
+      <main>
+        <br />
+        <form
+          action="https://labs.inf.fh-dortmund.de/tutorialService/testTutorialSearch.php"
+          method="get"
+        >
+          <label for="Suche">Suchen nach Tutorials:</label>
+          <input
+            type="text"
+            id="Suche"
+            name="search"
+            placeholder="z. B. Web-Entwicklung"
+            maxlength="20"
+            minlength="4"
+            pattern="[A-Z].*"
+            required
+          />
+          <button type="submit">Suchen!</button>
+        </form>
+        <h2>Tutorials</h2>
+        <div class="kachel">
+          <a href="tutorials.html#web">
+            <div class="kate">
+              <img src="assets/img/web.png" alt="NodeJS" width="40" />
+              <p>Web-Entwicklung</p>
+            </div>
+          </a>
+          <br />
+          <a href="tutorials.html#software">
+            <div class="kate">
+              <img src="assets/img/sw.png" alt="Agile" width="30" />
+              <p>Software-technick</p>
+            </div>
+          </a>
+          <br />
+          <a href="tutorials.html#mathe"
+            ><div class="kate">
+              <img src="assets/img/dgl.webp" alt="Mathe" width="30" />
+              <p>Mathematik für Informatik</p>
+            </div>
+          </a>
+          <br>
+          <a href="tutorials.html">
+            <div class="kate">
+              <img src="assets/img/database.webp" alt="Database" width="30" />
+              <p>Datenbank</p>
+            </div>
+          </a>
+          <br>
+        </div>
+      </main>
+      <aside>
+        <h2>Neue Tutorials</h2>
+        <ul>
+          <li>
+            Node.js-Der schnelle Einstieg, 28. Sep. 2025-Dauer: 1 Std. 5 Min
+          </li>
+          <li>
+            Angular GrundKurs ,Ökosystem, 28. Sep. 2025-Dauer: 1 Std. 58 Min
+          </li>
+        </ul>
+      </aside>
+    </div>
+
+    <footer>
+      <p>&copy; By WebTech Inc.</p>
+    </footer>
+    <script src="assets/js/script.js"></script>
+    <script src="./assets/js/burgerMenu.js"></script>
+
+  </body>
+</html>

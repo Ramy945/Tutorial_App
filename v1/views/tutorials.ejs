@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/grid.css" />
+
+    <title>Tutorials</title>
+  </head>
+  <body>
+    <%- include("includes/header.ejs")%> <%- include("includes/nav.ejs")%>
+    <main>
+      <% if (tut && tut.length > 0) { %>
+      <ul>
+        <% tut.forEach(function(tutorial) { %>
+          <a href="http://localhost:8020/tutorial?name=<%= tutorial.name %>"><h2><%= tutorial.name %></h2></a>
+          <figure>
+            <img
+              class="imgTutrials"
+              src= <%= tutorial.bild.url %>
+              alt= <%= tutorial.bild.name %>
+              width="70"
+            />
+          </figure>
+        
+        <p>Datum: <%= tutorial.datum %></p>
+        <p>Dauer: <%= tutorial.dauer %></p>
+        <p><%= tutorial.beschreibung %></p><br>
+        <% }); %>
+      </ul>
+      <% } else { %>
+      <p>No tutorials available for this category.</p>
+      <% } %>
+      <br>
+    </main>
+    <%- include("includes/aside.ejs")%> <%- include("includes/footer.ejs")%>
+    <script src="/js/burgerMenu.js"></script>
+  </body>
+</html>
